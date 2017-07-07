@@ -1,23 +1,19 @@
 // app/routes.js
 module.exports = function(app, passport) {
-
     // =====================================
     // HOME PAGE (with login links) ========
     // =====================================
     app.get('/', function(req, res) {
         res.render('index.handlebars'); // load the index.ejs file
     });
-
     // =====================================
     // LOGIN ===============================
     // =====================================
     // show the login form
     app.get('/login', function(req, res) {
-
         // render the page and pass in any flash data if it exists
         res.render('login.handlebars', { message: req.flash('loginMessage') });
     });
-
     // process the login form
     // app.post('/login', do all our passport stuff here);
 
@@ -44,7 +40,6 @@ module.exports = function(app, passport) {
             user : req.user // get the user out of session and pass to template
         });
     });
-
     // =====================================
     // LOGOUT ==============================
     // =====================================
